@@ -1,5 +1,9 @@
 <template name="mainLayout">
   <div class="wrapper">
+    {{> header}}
+    {{> carousel}}
+    {{> post3}}
     {{> Template.dynamic template = yield}}
+    {{> footer}}
   </div>
 </template>

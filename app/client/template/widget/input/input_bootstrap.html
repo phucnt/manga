@@ -1,0 +1,9 @@
+<template name="inputValidation">
+  <div class="form-group {{hasClass 'has-'}}">
+    <label class="form-control-label" for="{{this.id}}">{{message}}</label>
+    <input type="{{this.type}}" class="form-control {{hasClass 'form-control-'}}" id="{{this.id}}"
+    placeholder="{{this.placeholder}}" {{this.required}}
+    {{this.disable}} pattern={{this.pattern.regex}} title="{{this.pattern.message}}"
+    >
+  </div>
+</template>
