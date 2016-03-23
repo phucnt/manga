@@ -1,10 +1,9 @@
-Template.addCatalogue.events({
+Template.addCategory.events({
   'submit form': function(event, template) {
     var instance = Template.instance();
     event.preventDefault();
     // Template.instance
-    return;
-    Meteor.call('Catelogue/insert', template.$('input').val(), function(err) {
+    Meteor.call('Category/insert', template.$('input').val(), function(err) {
       if (err) {
         instance.state.set('alert.hide', false);
         instance.state.set('alert.type', 'ERROR');
@@ -23,7 +22,7 @@ Template.addCatalogue.events({
   }
 })
 
-Template.addCatalogue.helpers({
+Template.addCategory.helpers({
   onChange() {
     return (event) => {
       console.log(event);
@@ -48,14 +47,10 @@ Template.addCatalogue.helpers({
 
       },
       onFocusout: function() {
-        //instance.state.set('alert.hide', true);
-        // instance.state.set('alert.type', 'ERROR');
-        // instance.state.set('alert.message', 'catelogue name');
+
       },
       onFocus: function() {
-        instance.state.set('alert.hide', false);
-        instance.state.set('alert.type', 'INFO');
-        instance.state.set('alert.message', 'catelogue name');
+
       },
       onKeyup: _.debounce(function(value) {
 
@@ -81,7 +76,7 @@ Template.addCatalogue.helpers({
 
 })
 
-Template.addCatalogue.onCreated(function() {
+Template.addCategory.onCreated(function() {
   instance = Template.instance();
   this.state = new ReactiveDict();
   this.save = function() {

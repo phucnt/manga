@@ -1,5 +1,9 @@
 <template name="contentLayout">
   {{> header}}
-  {{> Template.dynamic template = yield}}
+  {{#if Template.subscriptionsReady}}
+    {{> Template.dynamic template = yield}}
+  {{else}}
+    Loading
+  {{/if}}
   {{> footer}}
 </template>

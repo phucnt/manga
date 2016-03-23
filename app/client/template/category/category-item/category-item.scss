@@ -1,0 +1,11 @@
+.category-item {
+  background-color: #f4f7fa;
+  padding:5px;
+  text-align: center;
+}
+.category-item.category-item-border {
+  border-radius: 2px;
+  border: 0;
+  -webkit-box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+}

@@ -24,9 +24,9 @@ FlowRouter.route('/sign-up', {
 
 })
 
-FlowRouter.route('/catalogue', {
-  name: 'catalogue',
+FlowRouter.route('/category', {
+  name: 'category',
   action(params, queryParams) {
-    BlazeLayout.render('contentLayout', {yield: 'catalogue'});
+    BlazeLayout.render('contentLayout', {yield: 'category'});
   }
 })

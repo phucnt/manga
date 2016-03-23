@@ -1,0 +1,26 @@
+<template name="category">
+  <section class="page-header">
+    <!-- <ol class="breadcrumb">
+      <li class="active">Home</li>
+    </ol>
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li class="active">Library</li>
+    </ol> -->
+    <ol class="breadcrumb" style="margin-bottom: 5px;">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+  </section>
+  <section class="row">
+    <aside class="col-md-8">
+      {{#each item in Categories}}
+        {{> categoryItem Category = item}}
+      {{/each}}
+    </aside>
+    <aside class="col-md-4">
+      {{> addCategory}}
+    </aside>
+  </section>
+</template>
