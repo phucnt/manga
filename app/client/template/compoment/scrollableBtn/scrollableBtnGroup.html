@@ -1,0 +1,19 @@
+<template name="scrollableBtnGroup">
+  <div class="btn-group btn-group-justified">
+    {{#if buttonCount $gt viewBtnCount}}
+      <div class="btn-group">
+        <button type="button" data-action="prev" class="btn btn-default js-scrollable-btn-action scrollable-btn-group-prev">{{{prevLabel}}}</button>
+      </div>
+    {{/if}}
+    {{#each buttonsActive}}
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" data-value="{{value}}">{{label}}</button>
+      </div>
+    {{/each}}
+    {{#if buttonCount $gt viewBtnCount}}
+      <div class="btn-group">
+        <button type="button" data-action="next" class="btn btn-default js-scrollable-btn-action scrollable-btn-group-next">{{{nextLabel}}}</button>
+      </div>
+    {{/if}}
+  </div>
+</template>

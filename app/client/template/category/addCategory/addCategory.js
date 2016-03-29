@@ -2,8 +2,12 @@ Template.addCategory.events({
   'submit form': function(event, template) {
     var instance = Template.instance();
     event.preventDefault();
+    template.$('button').button('loading');
+    var l = Ladda.create(template.$('button')[0]);
+    l.start();
     // Template.instance
     Meteor.call('Category/insert', template.$('input').val(), function(err) {
+      l.stop();
       if (err) {
         instance.state.set('alert.hide', false);
         instance.state.set('alert.type', 'ERROR');
